@@ -42,12 +42,13 @@ startButton.addEventListener('click', function(){
   console.log("start button is being clicked");
 });
 
+
+
 truee.addEventListener('click', function() {
   console.log("true is being clicked");
   if (answer === true) {
     console.log("you are correct");
   }
-
 });
 
 falsee.addEventListener('click', function() {
