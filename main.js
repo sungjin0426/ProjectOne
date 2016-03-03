@@ -1,5 +1,6 @@
 window.onload = function() {
   console.log("Javascript is loaded");
+  startTrivia();
   createPlayer();
   reset();
 };
@@ -18,10 +19,11 @@ var nbaTrivia = [
     { q10: "Michael Jordan is the only player to win three consecutive NBA Finals MVP Awards:", answer: "Shaquille O'Neal 2000-2002, false"
   }
 ];
+//inital values
 var answer;
-var playerName;
 var game = false;
 var currentPoint;
+var playerName = document.querySelector(".playerName");
 var truee = document.querySelector("#true");
 var falsee = document.querySelector("#false");
 var enterButton = document.querySelector("#enter");
@@ -31,17 +33,23 @@ var input = document.querySelector("#input");
 var question = document.querySelector(".question");
 var tab = document.querySelector(".question-tab");
 var resetButton = document.querySelector("#reset");
+var goal = document.querySelector(".goal");
+var startButton = document.querySelector("#start");
+var status = document.getElementsByClassName(".status");
 
 //if start button is not clicked, don't start the trivia
-var startButton = document.querySelector("#start");
-startButton.addEventListener('click', function(){
+var startTrivia = function () {
+  startButton.addEventListener('click', function(){
   console.log("start button is being clicked");
   start();
+  question1();
 });
-
+};
+//starting trivia
 function start() {
   console.log('starting game');
   game = true;
+  goal.innerHTML = "Get all 10 questions right & You win!";
 }
 
 function reset() {
@@ -53,31 +61,26 @@ function reset() {
 function createPlayer() {
 enterButton.addEventListener('click', function(){
 console.log("enter button is being clicked once");
-playerName = document.createElement('p');
 playerName.innerHTML = "Are you ready to play, " + input.value +"?";
-userName.appendChild(playerName);
 });
 }
 
 var truthy = truee.addEventListener('click', function() {
   console.log("true is being clicked");
 });
-
 var falsy = falsee.addEventListener('click', function() {
   console.log("false is being clicked");
 });
+
+//show questions
 function question1() {
+  question.innerHTML = nbaTrivia[0].q1;
 
 }
-//question 1
-question.innerHTML = "Here is your first question.";
-var firstQ = document.createElement('p');
-firstQ.innerHTML = nbaTrivia[0].q1;
-question.appendChild(firstQ);
 
 //
 // //question 2
-// question.innerHTML = "Here is your second question";
+// status.innerHTML = "Here is your second question";
 // var secondQ = document.createElement('p');
 // secondQ.innerHTML = nbaTrivia[1].q2;
 // question.appendChild(secondQ);
