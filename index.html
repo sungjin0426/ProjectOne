@@ -2,25 +2,31 @@
 <html>
   <head>
     <link rel="stylesheet" href="style.css">
+    <link href='https://fonts.googleapis.com/css?family=Coda:400,800' rel='stylesheet' type='text/css'>
     <meta charset="utf-8">
     <title>NBA Trivia</title>
   </head>
   <body>
     <div class="content">
       <div class="top">
-          <h1>NBA Trivia Game</h1>
+        <h1>NBA Trivia Game</h1>
+        <img src="http://www.logodesignlove.com/wp-content/uploads/2011/04/nba-logo-on-wood.jpg" alt="">
+        <div class="middle">
           <h2>Do you know your NBA?!</h2>
           <p>Enter your name below:</p>
           <div id="userName">
             <input type="text" id="input" name="name" placeholder="Enter your first name" value="">
-            <button type="submit" name="button" id="enter">enter</button>
+            <button type="submit" name="button" id="enter"> Enter</button>
           </div>
-          <button type="button" name="button" id="start">start</button>
-          <p class="pointCount">Current point:</p>
+          <p>Press Start to Begin!!</p>
+          <button type="button" name="button" id="start">Start</button>
+          <p class="pointCount"></p>
+          <button type="button" name="button" id="reset">Reset</button>
+        </div>
       </div>
       <div class="question-tab">
-        <div class="goal">Get all 10 questions right & you win.</div>
-        <div class="question">Time for your trivia question!</div>
+        <div class="goal">Get all 10 questions right & You win!</div>
+        <div class="question">Time for your trivia question</div>
         <div class="answer">
           <button type="button" name="button" id="true">True</button>
           <button type="button" name="button" id="false">False</button>
