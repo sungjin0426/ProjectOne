@@ -38,7 +38,7 @@ button {
   width: 100px;
 }
 input {
-  width: 200px;
+  width: 150px;
   border: 0;
   height: 24px;
   margin: 10px;
@@ -48,10 +48,10 @@ input {
   font-size: 20px;
 }
 #enter:hover {
-  background-color: ;
+  background-color: gold;
 }
 #start:hover {
-  background-color:
+  background-color: green;
 }
 #reset:hover {
   background-color: black;
