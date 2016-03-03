@@ -36,6 +36,8 @@ var resetButton = document.querySelector("#reset");
 var goal = document.querySelector(".goal");
 var startButton = document.querySelector("#start");
 var status = document.getElementsByClassName(".status");
+var answer = document.querySelector(".answer");
+var wrong = document.querySelector(".wrong");
 
 //if start button is not clicked, don't start the trivia
 var startTrivia = function () {
@@ -50,6 +52,7 @@ function start() {
   console.log('starting game');
   game = true;
   goal.innerHTML = "Get all 10 questions right & You win!";
+  status.innerHTML = "Here is your first question.";
 }
 
 function reset() {
@@ -65,19 +68,28 @@ playerName.innerHTML = "Are you ready to play, " + input.value +"?";
 });
 }
 
-var truthy = truee.addEventListener('click', function() {
+truee.addEventListener('click', function() {
   console.log("true is being clicked");
 });
-var falsy = falsee.addEventListener('click', function() {
+falsee.addEventListener('click', function() {
   console.log("false is being clicked");
 });
 
 //show questions
 function question1() {
   question.innerHTML = nbaTrivia[0].q1;
-
+  falsee.addEventListener('click', function(){
+  question.innerHTML = "";
+  question.innerHTML = nbaTrivia[1].q2;
+  answer.innerHTML = "";
+});
+  truee.addEventListener('click', function() {
+  answer.innerHTML = "";
+  answer.innerHTML = "Correct answer is..." + nbaTrivia[0].answer;
+  question.innerHTML = "";
+  question.innerHTML = "Sorry, Try next time";
+});
 }
-
 //
 // //question 2
 // status.innerHTML = "Here is your second question";
