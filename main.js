@@ -1,6 +1,8 @@
 window.onload = function() {
   console.log("Javascript is loaded");
+  hideButton();
   start();
+  reset();
 };
 
 //questions for trivia
@@ -52,24 +54,41 @@ var tab = document.querySelector(".questions");
 var goal = document.querySelector(".goal");
 var answer = document.querySelector(".answer");
 var wrong = document.querySelector(".wrong");
-var middle = document.querySelector(".middle");
+var enterName = document.querySelector(".enter-name");
 
 //initial value by id
+var middle = document.querySelector("#middle");
 var truee = document.querySelector("#true");
 var falsee = document.querySelector("#false");
 var enterButton = document.querySelector("#enter");
 var input = document.querySelector("#input");
 var resetButton = document.querySelector("#reset");
 var startButton = document.querySelector("#start");
+var topSection = document.querySelector("#top-section");
 
 //starting trivia
+function hideButton() {
+truee.style.visibility = 'hidden';
+falsee.style.visibility = 'hidden';
+resetButton.style.visibility = 'hidden';
+}
+
+function showButton() {
+  truee.style.visibility = 'visible';
+  falsee.style.visibility = 'visible';
+  resetButton.style.visibility = 'visible';
+}
+
 function start() {
   enterButton.addEventListener('click', function(){
   console.log("enter button is being clicked once");
-  play.innerHTML = "Are you ready to play, " + input.value +"?";
-  pressStart.innerHTML = "";
-  play.innerHTML = "Get all 10 questions right & You win!";
+  play.innerHTML = input.value + ", Get all 10 questions right & You win!";
   goal.innerHTML = "Here is your first question.";
+  middle.removeChild(enterName);
+  user.removeChild(input);
+  user.removeChild(enterButton);
+  showButton();
+  question.innerHTML = questions[0];
 });
 }
 

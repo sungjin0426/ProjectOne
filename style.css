@@ -9,25 +9,27 @@ body {
   width: 100%;
   position: relative;
 }
-.top {
+#top-section {
   text-align: center;
   background-color: #0046AD;
   color: white;
-  width: 50%;
+  width: 65%;
 }
-.top h1{
+#top-section h1{
   font-size: 40px;
 }
-.top img {
-  width: 44%;
+#top-section img {
+  width: 60%;
   position: relative;
 }
 .goal {
   text-align: center;
   font-size: xx-large;
 }
-.middle {
+#middle {
+  text-align: center;
   background-color: #D0103A;
+  width: 65%;
 }
 .questions {
   background-color: #D0103A;
@@ -42,14 +44,27 @@ button {
   margin: 10px;
   width: 100px;
 }
+#enter {
+  width: 300px;
+  height: 200px;
+  font-size: 100px;
+}
+.enter-name {
+  font-size: 40px;
+}
 input {
-  width: 150px;
+  width: 200px;
   border: 0;
-  height: 24px;
+  height: 50px;
   margin: 10px;
   color: black;
+  font-size: 20px;
+  text-align: center;
 }
 .question {
+  font-size: 30px;
+}
+.play {
   font-size: 30px;
 }
 #enter:hover {
