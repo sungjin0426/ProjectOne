@@ -43,7 +43,6 @@ var checkAnswer = [
   "False, Shaquille O'Neal won consecutively in season 2000-2002"
 ];
 var gameOver = ["GAMEOVER, please try again."];
-var readyPlay = ["Are you ready to play?!"];
 
 //inital values by className
 var play = document.querySelector(".play");
@@ -66,13 +65,13 @@ var resetButton = document.querySelector("#reset");
 var startButton = document.querySelector("#start");
 var topSection = document.querySelector("#top-section");
 
-//starting trivia
+//hide buttons
 function hideButton() {
 truee.style.visibility = 'hidden';
 falsee.style.visibility = 'hidden';
 resetButton.style.visibility = 'hidden';
 }
-
+//show button
 function showButton() {
   truee.style.visibility = 'visible';
   falsee.style.visibility = 'visible';
