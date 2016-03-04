@@ -44,8 +44,11 @@ var startTrivia = function () {
   startButton.addEventListener('click', function(){
   console.log("start button is being clicked");
   start();
-  question1();
+  questions();
 });
+};
+var questions = function() {
+  question1();
 };
 //starting trivia
 function start() {
@@ -76,18 +79,22 @@ falsee.addEventListener('click', function() {
 });
 
 //show questions
+//question 1
 function question1() {
   question.innerHTML = nbaTrivia[0].q1;
   falsee.addEventListener('click', function(){
   question.innerHTML = "";
   question.innerHTML = nbaTrivia[1].q2;
   answer.innerHTML = "";
+  goal.innerHTML = "";
+
 });
   truee.addEventListener('click', function() {
   answer.innerHTML = "";
-  answer.innerHTML = "Correct answer is..." + nbaTrivia[0].answer;
+  answer.innerHTML = "Correct answer is... " + nbaTrivia[0].answer;
   question.innerHTML = "";
-  question.innerHTML = "Sorry, Try next time";
+  question.innerHTML = "Sorry, try next time.";
+  goal.innerHTML = "";
 });
 }
 //
