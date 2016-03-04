@@ -4,10 +4,16 @@
   font-family: 'Coda', cursive;
   color: #DFE8EF;
 }
+body {
+  background-image: url("http://www.psdgraphics.com/file/basketball-floor.jpg");
+  width: 100%;
+  position: relative;
+}
 .top {
   text-align: center;
   background-color: #0046AD;
   color: white;
+  width: 50%;
 }
 .top h1{
   font-size: 40px;
@@ -23,7 +29,7 @@
 .middle {
   background-color: #D0103A;
 }
-.question-tab {
+.questions {
   background-color: #D0103A;
   height: 100%;
   padding: 10px;

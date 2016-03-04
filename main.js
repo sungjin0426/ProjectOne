@@ -1,63 +1,76 @@
 window.onload = function() {
   console.log("Javascript is loaded");
-  startTrivia();
-  createPlayer();
-  reset();
+  start();
 };
 
 //questions for trivia
-var nbaTrivia = [
-    { q1: "Current NBA commissioner is David Stern:", answer: 'Adam Silver, false' },
-    { q2: "Stephen Curry's jersey number is #30:", answer: true,},
-    { q3: "Currently, LeBron James plays for Miami Heat:", answer: "Cleveland Cavaliers, false" },
-    { q4: "The shortest NBA player was Muggsy Bogues:", answer: 'true'},
-    { q5: "Shaquille O'Neal's shoe size is 23:", answer: true },
-    { q6: "All NBA teams are based in the USA:", answer: "Toronto Raptors, false"},
-    { q7: "The tallest NBA player was 7 foot 6 Yao Ming:", answer:' 7foot 7inches Manute Bol and Gheorghe Mureşan, false'},
-    { q8: "Stephen Curry's birthname is Wardell Stephen Curry II:", answer: true },
-    { q9: "Kobe Bryant's middle name is 'Bean':", answer: true },
-    { q10: "Michael Jordan is the only player to win three consecutive NBA Finals MVP Awards:", answer: "Shaquille O'Neal 2000-2002, false"
-  }
+// var nbaTrivia = [
+//     { q1: "Current NBA commissioner is David Stern:", answer: 'Adam Silver, false' },
+//     { q2: "Stephen Curry's jersey number is #30:", answer: true,},
+//     { q3: "Currently, LeBron James plays for Miami Heat:", answer: "Cleveland Cavaliers, false" },
+//     { q4: "The shortest NBA player was Muggsy Bogues:", answer: 'true'},
+//     { q5: "Shaquille O'Neal's shoe size is 23:", answer: true },
+//     { q6: "All NBA teams are based in the USA:", answer: "Toronto Raptors, false"},
+//     { q7: "The tallest NBA player was 7 foot 6 Yao Ming:", answer:' 7foot 7inches Manute Bol and Gheorghe Mureşan, false'},
+//     { q8: "Stephen Curry's birthname is Wardell Stephen Curry II:", answer: true },
+//     { q9: "Kobe Bryant's middle name is 'Bean':", answer: true },
+//     { q10: "Michael Jordan is the only player to win three consecutive NBA Finals MVP Awards:", answer: "Shaquille O'Neal 2000-2002, false"
+//   }
+// ];
+var questions = [
+  "Current NBA commissioner is David Stern:",
+  "Stephen Curry's jersey number is #30:",
+  "Currently, LeBron James plays for Miami:",
+  "The shortest NBA player was Muggsy Bogues:",
+  "Shaquille O'Neal's shoe size is 23:",
+  "All NBA teams are based in the USA:",
+  "Stephen Curry's birthname is Wardell Stephen Curry II:",
+  "Kobe Bryant's middle name is 'Bean':",
+  "Michael Jordan is the only player to win three consecutive NBA Finals MVP Awards:"
 ];
-//inital values
-var answer;
-var game = false;
-var currentPoint;
-var playerName = document.querySelector(".playerName");
+var checkAnswer = [
+  "False, Current NBA commissioner is Adam Silver.",
+  "True, Stephen Curry wear #30.",
+  "False, LeBron James plays for Cleveland Cavaliers.",
+  "True, Muggsy Bogues is 5 feet and 3 inches tall.",
+  "True, that's pretty big for human",
+  "False, Toronto Raptors is based in Canada",
+  "False, 7foot 7inches Manute Bol and Gheorghe Mureşan",
+  "True!",
+  "True, what a funny middle name ^^",
+  "False, Shaquille O'Neal won consecutively in season 2000-2002"
+];
+var gameOver = ["GAMEOVER, please try again."];
+var readyPlay = ["Are you ready to play?!"];
+
+//inital values by className
+var play = document.querySelector(".play");
 var pressStart = document.querySelector(".press");
+var user = document.querySelector(".user");
+var question = document.querySelector(".question");
+var tab = document.querySelector(".questions");
+var goal = document.querySelector(".goal");
+var answer = document.querySelector(".answer");
+var wrong = document.querySelector(".wrong");
+var middle = document.querySelector(".middle");
+
+//initial value by id
 var truee = document.querySelector("#true");
 var falsee = document.querySelector("#false");
 var enterButton = document.querySelector("#enter");
-var name = document.querySelector("#name");
-var userName = document.querySelector("#userName");
 var input = document.querySelector("#input");
-var question = document.querySelector(".question");
-var tab = document.querySelector(".question-tab");
 var resetButton = document.querySelector("#reset");
-var goal = document.querySelector(".goal");
 var startButton = document.querySelector("#start");
-var status = document.getElementsByClassName(".status");
-var answer = document.querySelector(".answer");
-var wrong = document.querySelector(".wrong");
 
-//if start button is not clicked, don't start the trivia
-var startTrivia = function () {
-  startButton.addEventListener('click', function(){
-  console.log("start button is being clicked");
-  start();
-});
-};
-var questions = function() {
-  question1();
-};
 //starting trivia
 function start() {
-  console.log('starting game');
-  game = true;
+  enterButton.addEventListener('click', function(){
+  console.log("enter button is being clicked once");
+  play.innerHTML = "Are you ready to play, " + input.value +"?";
   pressStart.innerHTML = "";
-  goal.innerHTML = "Get all 10 questions right & You win!";
-  status.innerHTML = "Here is your first question.";
-  questions();
+  play.innerHTML = "Get all 10 questions right & You win!";
+  goal.innerHTML = "Here is your first question.";
+});
 }
 
 function reset() {
@@ -66,40 +79,39 @@ function reset() {
 });
 }
 
-function createPlayer() {
-enterButton.addEventListener('click', function(){
-console.log("enter button is being clicked once");
-playerName.innerHTML = "Are you ready to play, " + input.value +"?";
-});
-}
+// function createPlayer() {
+// enterButton.addEventListener('click', function(){
+// console.log("enter button is being clicked once");
+// play.innerHTML = "Are you ready to play, " + input.value +"?";
+// pressStart.innerHTML = "Press Start to Begin!!";
+// });
+// }
 
-truee.addEventListener('click', function() {
-  console.log("true is being clicked");
-});
-falsee.addEventListener('click', function() {
-  console.log("false is being clicked");
-});
 
 //show questions
 //question 1
-function question1() {
+function question1(event) {
   question.innerHTML = nbaTrivia[0].q1;
   falsee.addEventListener('click', function(){
+  console.log("false is clicked.");
   question.innerHTML = "";
   question.innerHTML = nbaTrivia[1].q2;
   answer.innerHTML = "";
-  goal.innerHTML = "";
-
+  goal.innerHTML = "Next question!";
+  play.innerHTML = "Correct!";
 });
   truee.addEventListener('click', function() {
+  console.log("true is clicked.");
   answer.innerHTML = "";
   answer.innerHTML = "Correct answer is... " + nbaTrivia[0].answer;
   question.innerHTML = "";
   question.innerHTML = "Sorry, try next time.";
-  goal.innerHTML = "";
-  game = false;
+  goal.innerHTML = "GAME OVER!";
+  play.innerHTML = "";
 });
 }
+
+
 //
 // //question 2
 // status.innerHTML = "Here is your second question";
