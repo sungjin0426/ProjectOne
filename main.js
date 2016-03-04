@@ -24,6 +24,7 @@ var answer;
 var game = false;
 var currentPoint;
 var playerName = document.querySelector(".playerName");
+var pressStart = document.querySelector(".press");
 var truee = document.querySelector("#true");
 var falsee = document.querySelector("#false");
 var enterButton = document.querySelector("#enter");
@@ -44,7 +45,6 @@ var startTrivia = function () {
   startButton.addEventListener('click', function(){
   console.log("start button is being clicked");
   start();
-  questions();
 });
 };
 var questions = function() {
@@ -54,8 +54,10 @@ var questions = function() {
 function start() {
   console.log('starting game');
   game = true;
+  pressStart.innerHTML = "";
   goal.innerHTML = "Get all 10 questions right & You win!";
   status.innerHTML = "Here is your first question.";
+  questions();
 }
 
 function reset() {
@@ -95,6 +97,7 @@ function question1() {
   question.innerHTML = "";
   question.innerHTML = "Sorry, try next time.";
   goal.innerHTML = "";
+  game = false;
 });
 }
 //
