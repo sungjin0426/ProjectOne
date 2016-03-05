@@ -11,52 +11,52 @@ window.onload = function() {
 var data = [
   {
     question: "Current NBA commissioner is David Stern:",
-    answer: false,
-    explanation: "Current NBA commissioner is Adam Silver."
+    answer: "False",
+    explanation: "No! Current NBA commissioner is Adam Silver."
   },
   {
     question: "Stephen Curry's jersey number is #30:",
-    answer: true,
+    answer: "True",
     explanation: "Stephen Curry wears #30."
   },
   {
     question: "Currently, LeBron James plays for Miami:",
-    answer: false,
-    explanation: "LeBron James plays for Cleveland Cavaliers.",
+    answer: "False",
+    explanation: "No LeBron James plays for Cleveland Cavaliers.",
   },
   {
     question: "The shortest NBA player was Muggsy Bogues:",
-    answer: true,
+    answer: "True",
     explanation: "Muggsy Bogues is 5 feet and 3 inches tall.",
   },
   {
     question: "Shaquille O'Neal's shoe size is 23:",
-    answer: true,
+    answer: "True",
     explanation: "That's pretty big for human.",
   },
   {
     question: "All NBA teams are based in the USA:",
-    answer: false,
+    answer: "False",
     explanation: "Toronto Raptors is based in Canada.",
   },
   {
     question: "The tallest NBA player was 7 foot 6 Yao Ming",
-    answer: false,
+    answer: "False",
     explanation: "Tallest player are (7foot 7inches) Manute Bol and Gheorghe Mureşan.",
   },
   {
     question: "Stephen Curry's birthname is Wardell Stephen Curry II:",
-    answer: true,
+    answer: "True",
     explanation: "That's a cool name!",
   },
   {
     question: "Kobe Bryant's middle name is 'Bean':",
-    answer: true,
+    answer: "True",
     explanation: "what a funny middle name!",
   },
   {
     question: "Michael Jordan is the only player to win three consecutive NBA Finals MVP Awards:",
-    answer: false,
+    answer: "False",
     explanation: "Shaquille O'Neal won consecutively in season 2000-2002.",
   }
 ];
@@ -164,6 +164,7 @@ function falsy() {
         questionNumber += 1;
         goal.innerHTML = "";
         play.innerHTML = "Question " + (questionNumber + 1) + " of 10";
+        answer.innerHTML = "Previous answer: " + data[questionNumber].answer;
         question.innerHTML = data[questionNumber].question;
       }
     } else {
@@ -188,8 +189,9 @@ function truthy() {
     questionNumber += 1;
     goal.innerHTML = "";
     play.innerHTML = "Question " + (questionNumber + 1) + " of 10";
-    question.innerHTML = data[questionNumber].question;
+    answer.innerHTML = "Previous answer: " + data[questionNumber].answer;
     }
+    question.innerHTML = data[questionNumber].question;
   } else {
     answer.innerHTML = data[questionNumber].explanation;
     questionNumber = 0;
