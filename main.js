@@ -3,6 +3,7 @@ window.onload = function() {
   hideButton();
   start();
   reset();
+  shuffle(data);
   falsy();
   truthy();
 };
@@ -165,11 +166,10 @@ function falsy() {
         questionNumber += 1;
         goal.innerHTML = "";
         play.innerHTML = "Question " + (questionNumber + 1) + " of 10";
-        answer.innerHTML = "Previous answer: " + data[questionNumber].explanation;
         question.innerHTML = data[questionNumber].question;
       }
     } else {
-      answer.innerHTML = data[questionNumber].explanation;
+      answer.innerHTML = data[questionNumber].answer;
       questionNumber = 0;
       play.innerHTML = gameOverSay;
       removeAll();
@@ -191,9 +191,8 @@ function truthy() {
     questionNumber += 1;
     goal.innerHTML = "";
     play.innerHTML = "Question " + (questionNumber + 1) + " of 10";
-    answer.innerHTML = "Previous answer: " + data[questionNumber].explanation;
-    }
     question.innerHTML = data[questionNumber].question;
+    }
   } else {
     answer.innerHTML = data[questionNumber].explanation;
     questionNumber = 0;
@@ -201,4 +200,14 @@ function truthy() {
     removeAll();
   }
 });
+}
+//from memory game
+function shuffle(data) {
+    for (var i = data.length - 1; i > 0; i--) {
+        var j = Math.floor(Math.random() * (i + 1));
+        var temp = data[i];
+        data[i] = data[j];
+        data[j] = temp;
+    }
+    return data;
 }
