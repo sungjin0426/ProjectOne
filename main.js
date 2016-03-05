@@ -169,7 +169,7 @@ function falsy() {
         question.innerHTML = data[questionNumber].question;
       }
     } else {
-      answer.innerHTML = data[questionNumber].answer;
+      answer.innerHTML = data[questionNumber].explanation;
       questionNumber = 0;
       play.innerHTML = gameOverSay;
       removeAll();
