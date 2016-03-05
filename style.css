@@ -73,6 +73,14 @@ input {
 span {
   color: #D0103A;
 }
+.blue {
+  color: #0046AD;
+  text-transform: uppercase;
+}
+.gold {
+  color: gold;
+  text-transform: uppercase;
+}
 .question {
   font-size: 30px;
 }
