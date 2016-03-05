@@ -11,52 +11,52 @@ window.onload = function() {
 var data = [
   {
     question: "Current NBA commissioner is David Stern:",
-    answer: "False",
-    explanation: "No! Current NBA commissioner is Adam Silver."
+    answer: false,
+    explanation: "Current NBA commissioner is Adam Silver."
   },
   {
     question: "Stephen Curry's jersey number is #30:",
-    answer: "True",
+    answer: true,
     explanation: "Stephen Curry wears #30."
   },
   {
     question: "Currently, LeBron James plays for Miami:",
-    answer: "False",
-    explanation: "No LeBron James plays for Cleveland Cavaliers.",
+    answer: false,
+    explanation: "LeBron James plays for Cleveland Cavaliers.",
   },
   {
     question: "The shortest NBA player was Muggsy Bogues:",
-    answer: "True",
+    answer: true,
     explanation: "Muggsy Bogues is 5 feet and 3 inches tall.",
   },
   {
     question: "Shaquille O'Neal's shoe size is 23:",
-    answer: "True",
+    answer: true,
     explanation: "That's pretty big for human.",
   },
   {
     question: "All NBA teams are based in the USA:",
-    answer: "False",
+    answer: false,
     explanation: "Toronto Raptors is based in Canada.",
   },
   {
     question: "The tallest NBA player was 7 foot 6 Yao Ming",
-    answer: "False",
+    answer: false,
     explanation: "Tallest player are (7foot 7inches) Manute Bol and Gheorghe Mureşan.",
   },
   {
     question: "Stephen Curry's birthname is Wardell Stephen Curry II:",
-    answer: "True",
+    answer: true,
     explanation: "That's a cool name!",
   },
   {
     question: "Kobe Bryant's middle name is 'Bean':",
-    answer: "True",
+    answer: true,
     explanation: "what a funny middle name!",
   },
   {
     question: "Michael Jordan is the only player to win three consecutive NBA Finals MVP Awards:",
-    answer: "False",
+    answer: false,
     explanation: "Shaquille O'Neal won consecutively in season 2000-2002.",
   }
 ];
