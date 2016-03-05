@@ -70,6 +70,9 @@ input {
   font-size: 20px;
   text-align: center;
 }
+span {
+  color: #D0103A;
+}
 .question {
   font-size: 30px;
 }
@@ -81,9 +84,7 @@ input {
 }
 #enter:hover {
   background-color: gold;
-}
-#start:hover {
-  background-color: green;
+  color: #0046AD;
 }
 #reset:hover {
   background-color: black;

@@ -27,7 +27,7 @@ var data = [
   {
     question: "The shortest NBA player was Muggsy Bogues:",
     answer: true,
-    explanation: "Muggsy Bogues is 5 feet and 3 inches tall.",
+    explanation: "Muggsy Bogues was the SHORTEST! with 5 feet and 3 inches tall.",
   },
   {
     question: "Shaquille O'Neal's shoe size is 23:",
@@ -90,7 +90,7 @@ var content = document.querySelector("#content");
 
 //winner
 function winner() {
-  enterName.innerHTML = winnerSay;
+  play.innerHTML = winnerSay;
   goal.innerHTML = "";
   resetButton.style.visibility = 'visible';
   tab.removeChild(truee);
@@ -148,7 +148,7 @@ function reset() {
 }
 
 //Question and Answer Buttons
-var questionNumber = 0;
+var questionNumber = 9;
 var answerNumber = 0;
 function falsy() {
   falsee.addEventListener('click', function(){
@@ -156,15 +156,16 @@ function falsy() {
     console.log("false is clicked.");
     console.log(data[questionNumber].answer);
     if (value == data[questionNumber].answer) {
-      if (questionNumber === 9) {
+      if (questionNumber === data.length - 1) {
         //winner
         winner();
+        question.innerHTML = "Thanks for Playing " + input.value + "!";
       } else {
         //next question
         questionNumber += 1;
         goal.innerHTML = "";
         play.innerHTML = "Question " + (questionNumber + 1) + " of 10";
-        answer.innerHTML = "Previous answer: " + data[questionNumber].answer;
+        answer.innerHTML = "Previous answer: " + data[questionNumber].explanation;
         question.innerHTML = data[questionNumber].question;
       }
     } else {
@@ -182,14 +183,15 @@ function truthy() {
   console.log("true is clicked.");
   console.log(data[questionNumber].answer);
   if (value == data[questionNumber].answer) {
-    if(questionNumber === 9) {
+    if(questionNumber === data.length - 1) {
       //winner
       winner();
+      quesiton.innerHTML = "Thanks for Playing " + input.value + "!";
     } else {
     questionNumber += 1;
     goal.innerHTML = "";
     play.innerHTML = "Question " + (questionNumber + 1) + " of 10";
-    answer.innerHTML = "Previous answer: " + data[questionNumber].answer;
+    answer.innerHTML = "Previous answer: " + data[questionNumber].explanation;
     }
     question.innerHTML = data[questionNumber].question;
   } else {
