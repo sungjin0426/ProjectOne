@@ -3,9 +3,9 @@ window.onload = function() {
   hideButton();
   start();
   reset();
-  shuffle(data);
   falsy();
   truthy();
+  shuffle(data);
 };
 
 //trivia questions, answers, explanation
@@ -93,6 +93,7 @@ var content = document.querySelector("#content");
 function winner() {
   play.innerHTML = winnerSay;
   goal.innerHTML = "";
+  quesiton.innerHTML = "Thanks for Playing " + input.value + "!";
   resetButton.style.visibility = 'visible';
   tab.removeChild(truee);
   tab.removeChild(falsee);
@@ -125,8 +126,8 @@ function start() {
   enterButton.addEventListener('click', function(){
     console.log("enter button is being clicked once");
     if (input.value === input.value){
-    play.innerHTML = input.value + ", Get all 10 questions right & You win!";
-    goal.innerHTML = "Here is your first question.";
+    play.innerHTML = input.value + ", Get all " + (data.length) + " questions right & You win!";
+    goal.innerHTML = "Here is your 1st question.";
     middle.removeChild(enterName);
     user.removeChild(input);
     user.removeChild(enterButton);
@@ -160,7 +161,6 @@ function falsy() {
       if (questionNumber === data.length - 1) {
         //winner
         winner();
-        question.innerHTML = "Thanks for Playing " + input.value + "!";
       } else {
         //next question
         questionNumber += 1;
@@ -186,7 +186,6 @@ function truthy() {
     if(questionNumber === data.length - 1) {
       //winner
       winner();
-      quesiton.innerHTML = "Thanks for Playing " + input.value + "!";
     } else {
     questionNumber += 1;
     goal.innerHTML = "";
