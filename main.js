@@ -125,7 +125,7 @@ function showButton() {
 function start() {
   enterButton.addEventListener('click', function(){
     console.log("enter button is being clicked once");
-    if (input.value === input.value){
+    if (input.value.length > 0){
     play.innerHTML = input.value + ", Get all " + (data.length) + " questions right & You win!";
     goal.innerHTML = "Here is your 1st question.";
     middle.removeChild(enterName);
@@ -133,11 +133,12 @@ function start() {
     user.removeChild(enterButton);
     showButton();
     question.innerHTML = data[questionNumber].question;
-  } else if (input.value === false) {
-    play.innerHTML = "Please identify yourself!";
+  } else {
+    pressStart.innerHTML = "Please identify yourself!";
     middle.removeChild(enterName);
     user.removeChild(input);
     user.removeChild(enterButton);
+    resetButton.style.visibility = 'visible';
   }
   });
 }

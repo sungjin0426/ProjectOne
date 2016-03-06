@@ -39,6 +39,9 @@ body {
   background-color: #D0103A;
   width: 65%;
 }
+.press {
+  font-size: 30px;
+}
 .questions {
   background-color: #D0103A;
   height: 100%;
