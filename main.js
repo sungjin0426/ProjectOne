@@ -183,7 +183,7 @@ function falsy() {
       play.innerHTML = gameOverSay;
       removeAll();
       var wrongImg1 = document.createElement('img');
-      wrongImg1.setAttribute('src', '    http://espn.go.com/prod/styles/pagetype/otl/20141024_nbagifs/Dwight-Howard-Rockets.gif');
+      wrongImg1.setAttribute('src', 'http://espn.go.com/prod/styles/pagetype/otl/20141024_nbagifs/Dwight-Howard-Rockets.gif');
       wrongImg1.style.width = '30%';
       tab.appendChild(wrongImg1);
     }
