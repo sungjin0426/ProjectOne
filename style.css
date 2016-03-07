@@ -4,66 +4,85 @@
   font-family: 'Coda', cursive;
   color: #DFE8EF;
 }
+
 body {
   background-image: url("http://www.psdgraphics.com/file/basketball-floor.jpg");
   width: 100%;
   position: relative;
 }
+
 #content {
   padding-top: 50px;
   padding-bottom: 10px;
 }
+
 #top-section {
   text-align: center;
   background-color: #0046AD;
   color: white;
   width: 65%;
+  text-shadow: 0px 0px 7px #fff;
 }
+
 #top-section h1{
   font-size: 40px;
   padding: 10px;
 }
+
 #top-section h2 {
   padding: 10px;
 }
+
 #top-section img {
   width: 60%;
   position: relative;
 }
+
 .goal {
   text-align: center;
   font-size: xx-large;
+  font-family: 'Raleway', sans-serif;
 }
+
 #middle {
   text-align: center;
   background-color: #D0103A;
   width: 65%;
 }
+
 .press {
   font-size: 30px;
+  font-family: 'Passion One', cursive;
 }
+
 .questions {
   background-color: #D0103A;
   height: 100%;
   padding: 10px;
   text-align: center;
 }
+
 button {
   background-color: #0046AD;
   border: 0;
   font-size: 15px;
   margin: 15px;
   width: 100px;
+  font-family: 'Passion One', cursive;
 }
+
 #enter {
   width: 300px;
   height: 200px;
   font-size: 100px;
 }
+
 .enter-name {
   font-size: 40px;
   padding: 10px;
+  font-family: 'Passion One', cursive;
 }
+
 input {
   width: 200px;
   border: 0;
@@ -72,47 +91,78 @@ input {
   color: black;
   font-size: 20px;
   text-align: center;
+  font-family: 'Passion One', cursive;
 }
+
 span {
   color: #D0103A;
 }
+
 .blue {
   color: #0046AD;
   text-transform: uppercase;
+  font-family: 'Passion One', cursive;
 }
+
 .gold {
   color: gold;
   text-transform: uppercase;
+  font-family: 'Passion One', cursive;
 }
+
 .question {
   font-size: 30px;
+  font-family: 'Passion One', cursive;
 }
+
 .answer {
   font-size: 20px;
+  font-family: 'Passion One', cursive;
+  font-weight: lighter;
 }
+
 .play {
   font-size: 30px;
+  font-family: 'Passion One', cursive;
+}
+
+#true {
+  font-size: 25px;
+}
+
+#false {
+  font-size: 25px;
+}
+
+#reset {
+  font-size: 25px;
 }
 #enter:hover {
   background-color: gold;
   color: #0046AD;
 }
+
 #reset:hover {
   background-color: black;
 }
+
 #true:hover {
   background-color: limegreen;
 }
+
 #false:hover {
   background-color: limegreen;
 }
+
 .ga {
   text-align: right;
 }
+
 .ga img {
   width: 25%;
   padding-right: 5%;
 }
+
 .ga p{
   color: black;
   text-align: right;

@@ -93,10 +93,14 @@ var content = document.querySelector("#content");
 function winner() {
   play.innerHTML = winnerSay;
   goal.innerHTML = "";
-  quesiton.innerHTML = "Thanks for Playing " + input.value + "!";
+  question.innerHTML = "Thanks for Playing " + input.value + "!";
   resetButton.style.visibility = 'visible';
   tab.removeChild(truee);
   tab.removeChild(falsee);
+  var winnerImg = document.createElement('img');
+  winnerImg.setAttribute('src', 'http://espn.go.com/prod/styles/pagetype/otl/20141024_nbagifs/Blake-Griffin-500.gif');
+  winnerImg.style.width = '30%';
+  answer.appendChild(winnerImg);
 }
 
 //remove all
@@ -126,8 +130,8 @@ function start() {
   enterButton.addEventListener('click', function(){
     console.log("enter button is being clicked once");
     if (input.value.length > 0){
-    play.innerHTML = input.value + ", Get all " + (data.length) + " questions right & You win!";
-    goal.innerHTML = "Here is your 1st question.";
+    goal.innerHTML = input.value + ", Get all " + (data.length) + " questions right & You win!";
+    play.innerHTML = "Here is your 1st question.";
     middle.removeChild(enterName);
     user.removeChild(input);
     user.removeChild(enterButton);
@@ -139,6 +143,10 @@ function start() {
     user.removeChild(input);
     user.removeChild(enterButton);
     resetButton.style.visibility = 'visible';
+    var falseImg = document.createElement('img');
+    falseImg.setAttribute('src', '    http://espn.go.com/prod/styles/pagetype/otl/20141024_nbagifs/lebron-james.gif');
+    falseImg.style.width = '30%';
+    answer.appendChild(falseImg);
   }
   });
 }
@@ -151,7 +159,7 @@ function reset() {
 }
 
 //Question and Answer Buttons
-var questionNumber = 0;
+var questionNumber = 9;
 var answerNumber = 0;
 function falsy() {
   falsee.addEventListener('click', function(){
@@ -174,6 +182,10 @@ function falsy() {
       questionNumber = 0;
       play.innerHTML = gameOverSay;
       removeAll();
+      var wrongImg1 = document.createElement('img');
+      wrongImg1.setAttribute('src', '    http://espn.go.com/prod/styles/pagetype/otl/20141024_nbagifs/Dwight-Howard-Rockets.gif');
+      wrongImg1.style.width = '30%';
+      tab.appendChild(wrongImg1);
     }
   });
 }
@@ -190,7 +202,7 @@ function truthy() {
     } else {
     questionNumber += 1;
     goal.innerHTML = "";
-    play.innerHTML = "Question " + (questionNumber + 1) + " of 10";
+    play.innerHTML = "Question " + (questionNumber + 1) + " of " + (data.length);
     question.innerHTML = data[questionNumber].question;
     }
   } else {
@@ -198,6 +210,10 @@ function truthy() {
     questionNumber = 0;
     play.innerHTML = gameOverSay;
     removeAll();
+    var wrongImg2 = document.createElement('img');
+    wrongImg2.setAttribute('src', '    http://espn.go.com/prod/styles/pagetype/otl/20141024_nbagifs/Kevin-Durant-500.gif');
+    wrongImg2.style.width = '30%';
+    tab.appendChild(wrongImg2);
   }
 });
 }
