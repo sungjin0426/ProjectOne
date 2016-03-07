@@ -211,7 +211,7 @@ function truthy() {
     play.innerHTML = gameOverSay;
     removeAll();
     var wrongImg2 = document.createElement('img');
-    wrongImg2.setAttribute('src', '    http://espn.go.com/prod/styles/pagetype/otl/20141024_nbagifs/Kevin-Durant-500.gif');
+    wrongImg2.setAttribute('src', 'http://espn.go.com/prod/styles/pagetype/otl/20141024_nbagifs/Kevin-Durant-500.gif');
     wrongImg2.style.width = '30%';
     tab.appendChild(wrongImg2);
   }
