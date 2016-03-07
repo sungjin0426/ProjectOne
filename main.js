@@ -144,7 +144,7 @@ function start() {
     user.removeChild(enterButton);
     resetButton.style.visibility = 'visible';
     var falseImg = document.createElement('img');
-    falseImg.setAttribute('src', '    http://espn.go.com/prod/styles/pagetype/otl/20141024_nbagifs/lebron-james.gif');
+    falseImg.setAttribute('src', 'http://espn.go.com/prod/styles/pagetype/otl/20141024_nbagifs/lebron-james.gif');
     falseImg.style.width = '30%';
     answer.appendChild(falseImg);
   }
