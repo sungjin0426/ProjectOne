@@ -159,7 +159,7 @@ function reset() {
 }
 
 //Question and Answer Buttons
-var questionNumber = 9;
+var questionNumber = 0;
 var answerNumber = 0;
 function falsy() {
   falsee.addEventListener('click', function(){
